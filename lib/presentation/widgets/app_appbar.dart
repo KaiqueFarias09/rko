@@ -7,34 +7,32 @@ import 'package:rko/core/typography/app_typography.dart';
 class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
   const AppAppbar({
     required this.title,
-    super.key,
-    this.actionIcon,
-    this.actionOnTap,
     this.shouldShowDrawer = false,
+    this.shouldShowAction = false,
+    super.key,
   });
 
   final String title;
-  final IconData? actionIcon;
-  final VoidCallback? actionOnTap;
 
   final bool shouldShowDrawer;
+  final bool shouldShowAction;
 
   @override
   Widget build(BuildContext context) {
-    final hasAction = actionOnTap != null && actionIcon != null;
     final dimensions = AppDimensions();
 
     return AppBar(
       elevation: 0,
       shadowColor: Colors.transparent,
       backgroundColor: AppColors.white,
+      surfaceTintColor: AppColors.white,
       actions: [
-        if (hasAction)
+        if (shouldShowAction)
           IconButton(
-            onPressed: actionOnTap,
+            onPressed: () {},
             icon: Icon(
-              actionIcon,
-              size: dimensions.spacing7,
+              AppIcons.sound,
+              size: dimensions.spacing6,
               color: AppColors.blue800,
             ),
           )
@@ -53,7 +51,7 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
               icon: Icon(
                 AppIcons.x,
                 color: AppColors.blue800,
-                size: dimensions.spacing7,
+                size: dimensions.spacing6,
               ),
             ),
       centerTitle: true,
