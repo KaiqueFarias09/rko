@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rko/presentation/views/home/home_view.dart';
-import 'package:rko/presentation/views/secure-the-area/secure_the_are_view.dart';
+import 'package:rko/presentation/views/secure-the-area/secure_the_area_view.dart';
 
 class RouteGenerator {
   Route<dynamic> generateRoute(RouteSettings settings) {

@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/image_paths.dart';
 import 'package:rko/presentation/routes/route_generator.dart';
-import 'package:rko/presentation/views/secure-the-area/secure_the_are_view.dart';
+import 'package:rko/presentation/views/secure-the-area/secure_the_area_view.dart';
 import 'package:rko/presentation/widgets/app_appbar.dart';
 import 'package:rko/presentation/widgets/app_drawer.dart';
 import 'package:rko/presentation/widgets/button/app_primary_button.dart';
