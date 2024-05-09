@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/colors/app_colors.dart';
+import 'package:rko/core/constants/image_paths.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/core/typography/app_typography.dart';
 
@@ -48,7 +50,7 @@ class AppDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const SizedBox(),
-                  SvgPicture.asset('assets/images/hugging-heart-tinted.svg'),
+                  SvgPicture.asset(AppImages.huggingHeartTinted),
                 ],
               ),
             ],
