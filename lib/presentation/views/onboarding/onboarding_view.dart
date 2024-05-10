@@ -9,6 +9,8 @@ import 'package:rko/presentation/widgets/button/app_primary_button.dart';
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
 
+  static const id = 'onboarding';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class OnboardingView extends StatelessWidget {
               SvgPicture.asset(AppImages.initial),
               AppPrimaryButton(
                 text: 'Start',
-                onTap: () => Navigator.of(context).pushNamed(
+                onTap: () => Navigator.of(context).pushReplacementNamed(
                   SecureTheAreaView.id,
                 ),
               ),

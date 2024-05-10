@@ -26,9 +26,8 @@ class RkoApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'RKO',
-      theme: ThemeData(useMaterial3: true),
       debugShowCheckedModeBanner: false,
-      home: const OnboardingView(),
+      initialRoute: OnboardingView.id,
       onGenerateRoute: RouteGenerator().generateRoute,
     );
   }

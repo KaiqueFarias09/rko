@@ -14,7 +14,6 @@ class AudioCubit extends Cubit<AudioState> {
   final assetsPath = 'assets/audios';
 
   Future<void> play(String file) async {
-    
     await _player.setVolume(1);
     await _player.setAsset('$assetsPath/$file.mp3');
     await _player.play();
