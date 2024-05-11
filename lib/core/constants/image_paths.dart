@@ -12,7 +12,9 @@ class AppImages {
   static const initial = '$_assetPath/initial.svg';
   static const safePosition = '$_assetPath/safe-position.svg';
   static const secureTheArea = '$_assetPath/secure-the-are.svg';
-    static const checkIfPersonBreathes =
+  static const shakeThePerson = '$_assetPath/shake-the-person.svg';
+  static const callTheEmergency = '$_assetPath/call-the-emergency.svg';
+  static const checkIfPersonBreathes =
       '$_assetPath/check-if-person-breathes.svg';
   static const checkingAfterBreathing =
       '$_assetPath/checking-after-breathing.svg';
