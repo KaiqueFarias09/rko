@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/app_padding.dart';
 import 'package:rko/presentation/views/secure-the-area/secure_the_area_view.dart';
 import 'package:rko/presentation/widgets/app_appbar.dart';
@@ -14,6 +15,7 @@ class OnboardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       drawer: const AppDrawer(),
       appBar: const AppAppbar(title: 'RKO', shouldShowDrawer: true),
       body: Padding(

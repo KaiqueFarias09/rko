@@ -29,6 +29,7 @@ class AudioCubit extends Cubit<AudioState> {
     await _player.setVolume(1);
     await _player.setAsset('$assetsPath/$file.mp3');
     await _player.play();
+    emit(const AudioState(status: AudioStatus.playing));
   }
 
   Future<void> stop() => _player.stop();

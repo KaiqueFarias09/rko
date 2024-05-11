@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rko/core/constants/image_paths.dart';
-import 'package:rko/presentation/bloc/cubit/audio_cubit.dart';
+import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
 import 'package:rko/presentation/widgets/audio_view_scaffold.dart';
 import 'package:rko/presentation/widgets/bulleted_text.dart';
 

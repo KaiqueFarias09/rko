@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/image_paths.dart';
 import 'package:rko/core/dimensions/app_dimensions.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/core/typography/app_typography.dart';
+import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
+import 'package:rko/presentation/views/cpr/cpr_view.dart';
 import 'package:rko/presentation/views/home/home_view.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -36,25 +39,34 @@ class AppDrawer extends StatelessWidget {
               Column(
                 children: [
                   CustomListTile(
-                    icon: AppIcons.goBack,
-                    text: 'Menu główne',
-                    onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                      HomeView.id,
-                      (route) => false,
-                    ),
-                  ),
+                      icon: AppIcons.goBack,
+                      text: 'Menu główne',
+                      onTap: () async {
+                        await BlocProvider.of<AudioCubit>(context).stop();
+                        await Navigator.of(context).pushNamedAndRemoveUntil(
+                          HomeView.id,
+                          (route) => false,
+                        );
+                      }),
                   const SizedBox(height: 20),
                   CustomListTile(
-                    icon: AppIcons.heart,
-                    text: 'Tempo uciskania',
-                    onTap: () {},
-                  ),
+                      icon: AppIcons.heart,
+                      text: 'Tempo uciskania',
+                      onTap: () async {
+                        await BlocProvider.of<AudioCubit>(context).stop();
+                        await Navigator.of(context).pushNamedAndRemoveUntil(
+                          CprView.id,
+                          (route) => false,
+                        );
+                      }),
                   const SizedBox(height: 20),
                   CustomListTile(
-                    icon: AppIcons.call,
-                    text: 'Numer alarmowy',
-                    onTap: () => launchUrlString('tel: 122'),
-                  ),
+                      icon: AppIcons.call,
+                      text: 'Numer alarmowy',
+                      onTap: () async {
+                        await BlocProvider.of<AudioCubit>(context).stop();
+                        await launchUrlString('tel: 122');
+                      }),
                 ],
               ),
               Row(

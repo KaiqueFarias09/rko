@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/app_padding.dart';
-import 'package:rko/presentation/bloc/cubit/audio_cubit.dart';
+import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
 import 'package:rko/presentation/widgets/app_appbar.dart';
 import 'package:rko/presentation/widgets/app_bottom_navigation_bar.dart';
 

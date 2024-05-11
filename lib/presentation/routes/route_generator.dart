@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rko/presentation/bloc/cubit/audio_cubit.dart';
 import 'package:rko/presentation/views/check-if-person-breaths/check_if_person_breaths_view.dart';
+import 'package:rko/presentation/views/cpr/cpr_view.dart';
 import 'package:rko/presentation/views/first-things/first_things_view.dart';
 import 'package:rko/presentation/views/home/home_view.dart';
 import 'package:rko/presentation/views/onboarding/onboarding_view.dart';
@@ -11,32 +10,30 @@ class RouteGenerator {
   Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case SecureTheAreaView.id:
-        return _buildAudioRoute(const SecureTheAreaView());
+        return MaterialPageRoute(
+          builder: (builder) => const SecureTheAreaView(),
+        );
 
       case HomeView.id:
         return MaterialPageRoute(builder: (builder) => const HomeView());
+
+      case CprView.id:
+        return MaterialPageRoute(builder: (builder) => const CprView());
 
       case OnboardingView.id:
         return MaterialPageRoute(builder: (builder) => const OnboardingView());
 
       case FirstThingsView.id:
-        return _buildAudioRoute(const FirstThingsView());
+        return MaterialPageRoute(builder: (builder) => const FirstThingsView());
 
       case CheckIfPersonBreathsView.id:
-        return _buildAudioRoute(const CheckIfPersonBreathsView());
+        return MaterialPageRoute(
+          builder: (builder) => const CheckIfPersonBreathsView(),
+        );
 
       default:
         return _errorRoute();
     }
-  }
-
-  Route<dynamic> _buildAudioRoute(Widget screen) {
-    return MaterialPageRoute(
-      builder: (_) => BlocProvider.value(
-        value: AudioCubit(),
-        child: screen,
-      ),
-    );
   }
 
   static Route<dynamic> _errorRoute() {
