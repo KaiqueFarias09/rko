@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rko/core/colors/app_colors.dart';
+import 'package:rko/core/constants/app_padding.dart';
+import 'package:rko/core/dimensions/app_dimensions.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/core/typography/app_typography.dart';
 
@@ -19,12 +21,10 @@ class PillShapedButtonPrimary extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.blue800,
-          foregroundColor: AppColors.blue100,
-          padding: const EdgeInsets.symmetric(
-            vertical: 24,
-            horizontal: 32,
-          )),
+        backgroundColor: AppColors.blue800,
+        foregroundColor: AppColors.blue100,
+        padding: AppPaddings.buttonContentPadding,
+      ),
       onPressed: onTap,
       child: Row(
         children: [
@@ -35,7 +35,10 @@ class PillShapedButtonPrimary extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
-          Icon(icon ?? AppIcons.heart)
+          Icon(
+            icon ?? AppIcons.chevron_right,
+            size: AppDimensions().spacing5,
+          )
         ],
       ),
     );
