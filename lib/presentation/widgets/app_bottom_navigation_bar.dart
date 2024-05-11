@@ -26,28 +26,29 @@ class AppBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.15,
-      child: BottomAppBar(
-        color: Colors.transparent,
-        elevation: 0,
-        shadowColor: Colors.transparent,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            if (showSecondary)
-              PillShapedButtonSecondary(
-                title: secondaryTitle,
-                onTap: secondaryOnTap,
-                icon: secondaryIcon,
-              ),
-            PillShapedButtonPrimary(
-              title: primaryTitle,
-              onTap: primaryOnTap,
-              icon: primaryIcon,
-            ),
-          ],
-        ),
+    return BottomAppBar(
+      height: 100,
+      surfaceTintColor: Colors.transparent,
+      color: Colors.transparent,
+      elevation: 0,
+      shadowColor: Colors.transparent,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          if (showSecondary)
+            PillShapedButtonSecondary(
+              title: secondaryTitle,
+              onTap: secondaryOnTap,
+              icon: secondaryIcon,
+            )
+          else
+            const SizedBox(),
+          PillShapedButtonPrimary(
+            title: primaryTitle,
+            onTap: primaryOnTap,
+            icon: primaryIcon,
+          ),
+        ],
       ),
     );
   }

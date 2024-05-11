@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/image_paths.dart';
+import 'package:rko/core/dimensions/app_dimensions.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/core/typography/app_typography.dart';
+import 'package:rko/presentation/views/home/home_view.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({
@@ -24,25 +26,34 @@ class AppDrawer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               IconButton(
-                icon: const Icon(AppIcons.x, color: AppColors.blue100),
+                icon: Icon(
+                  AppIcons.x,
+                  color: AppColors.blue100,
+                  size: AppDimensions().spacing6,
+                ),
                 onPressed: () => Navigator.of(context).pop(),
               ),
               Column(
                 children: [
                   CustomListTile(
-                    icon: AppIcons.breathing,
+                    icon: AppIcons.goBack,
                     text: 'Menu główne',
-                    onTap: () {},
+                    onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                      HomeView.id,
+                      (route) => false,
+                    ),
                   ),
+                  const SizedBox(height: 20),
                   CustomListTile(
                     icon: AppIcons.heart,
                     text: 'Tempo uciskania',
                     onTap: () {},
                   ),
+                  const SizedBox(height: 20),
                   CustomListTile(
-                    icon: AppIcons.breathing,
+                    icon: AppIcons.call,
                     text: 'Numer alarmowy',
-                    onTap: () {},
+                    onTap: () => launchUrlString('tel: 122'),
                   ),
                 ],
               ),
@@ -50,7 +61,10 @@ class AppDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const SizedBox(),
-                  SvgPicture.asset(AppImages.huggingHeartTinted),
+                  SvgPicture.asset(
+                    AppImages.huggingHeartTinted,
+                    height: 150,
+                  ),
                 ],
               ),
             ],
@@ -77,10 +91,19 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      leading: Icon(icon, size: 32, color: AppColors.blue100),
-      title: Text(
-        text,
-        style: AppTypography.titleLarge.copyWith(color: AppColors.blue100),
+      leading: Icon(
+        icon,
+        size: AppDimensions().spacing6,
+        color: AppColors.blue100,
+      ),
+      title: Padding(
+        padding: const EdgeInsets.only(left: 16),
+        child: Text(
+          text,
+          style: AppTypography.bodyLarge.copyWith(
+            color: AppColors.blue100,
+          ),
+        ),
       ),
     );
   }

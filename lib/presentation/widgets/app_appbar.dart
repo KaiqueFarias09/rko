@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rko/core/colors/app_colors.dart';
-import 'package:rko/core/dimensions/app_dimensions.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/core/typography/app_typography.dart';
 
@@ -9,6 +8,8 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
     required this.title,
     this.shouldShowDrawer = false,
     this.shouldShowAction = false,
+    this.leadingOnTap,
+    this.actionOnTap,
     super.key,
   });
 
@@ -17,10 +18,11 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
   final bool shouldShowDrawer;
   final bool shouldShowAction;
 
+  final VoidCallback? actionOnTap;
+  final VoidCallback? leadingOnTap;
+
   @override
   Widget build(BuildContext context) {
-    final dimensions = AppDimensions();
-
     return AppBar(
       elevation: 0,
       shadowColor: Colors.transparent,
@@ -29,10 +31,10 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         if (shouldShowAction)
           IconButton(
-            onPressed: () {},
-            icon: Icon(
+            onPressed: actionOnTap,
+            icon: const Icon(
               AppIcons.sound,
-              size: dimensions.spacing6,
+              size: 20,
               color: AppColors.blue800,
             ),
           )
@@ -40,18 +42,18 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
       leading: shouldShowDrawer
           ? IconButton(
               onPressed: () => Scaffold.of(context).openDrawer(),
-              icon: Icon(
+              icon: const Icon(
                 AppIcons.menu,
                 color: AppColors.blue800,
-                size: dimensions.spacing7,
+                size: 20,
               ),
             )
           : IconButton(
-              onPressed: () => Navigator.of(context).pop(),
-              icon: Icon(
-                AppIcons.x,
+              onPressed: leadingOnTap ?? () => Navigator.of(context).pop(),
+              icon: const Icon(
+                AppIcons.chevronLeft,
                 color: AppColors.blue800,
-                size: dimensions.spacing6,
+                size: 20,
               ),
             ),
       centerTitle: true,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:rko/core/constants/image_paths.dart';
+import 'package:lottie/lottie.dart';
+import 'package:rko/core/constants/app_padding.dart';
 import 'package:rko/presentation/views/secure-the-area/secure_the_area_view.dart';
 import 'package:rko/presentation/widgets/app_appbar.dart';
 import 'package:rko/presentation/widgets/app_drawer.dart';
@@ -17,16 +17,16 @@ class OnboardingView extends StatelessWidget {
       drawer: const AppDrawer(),
       appBar: const AppAppbar(title: 'RKO', shouldShowDrawer: true),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(23, 34, 23, 30),
+        padding: AppPaddings.defaultPadding,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(),
-              SvgPicture.asset(AppImages.initial),
+              Lottie.asset('assets/animations/onboarding.json'),
               AppPrimaryButton(
                 text: 'Start',
-                onTap: () => Navigator.of(context).pushReplacementNamed(
+                onTap: () => Navigator.of(context).pushNamed(
                   SecureTheAreaView.id,
                 ),
               ),
