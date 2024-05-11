@@ -30,7 +30,7 @@ class PillShapedButtonSecondary extends StatelessWidget {
       child: Row(
         children: [
           Icon(
-            icon ?? AppIcons.chevron_left,
+            icon ?? AppIcons.chevronLeft,
             size: AppDimensions().spacing5,
           ),
           const SizedBox(width: 12),
