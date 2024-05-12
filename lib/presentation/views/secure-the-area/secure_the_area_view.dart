@@ -22,33 +22,32 @@ class SecureTheAreaView extends StatelessWidget {
       title: 'Bezpieczeństwo',
       id: id,
       bottomNavigationBar: const SizedBox.shrink(),
-      body: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SvgPicture.asset(AppImages.secureTheArea),
-            const Column(
-              children: [
-                BulletedText(
-                  'Upewnij się, że nie ma wokół Ciebie zagrożenia',
-                ),
-                BulletedText(
-                  'Załóż sprzęt do ochrony osobistej lub odblask jeśli go posiadasz.',
-                ),
-              ],
-            ),
-            AppPrimaryButton(
-              text: 'Kontynuuj',
-              onTap: () async {
-                await audioCubit.stop();
-                await Navigator.of(context).pushNamedAndRemoveUntil(
-                  HomeView.id,
-                  (route) => false,
-                );
-              },
-            )
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SvgPicture.asset(AppImages.secureTheArea),
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              BulletedText(
+                'Upewnij się, że nie ma wokół Ciebie zagrożenia',
+              ),
+              BulletedText(
+                'Załóż sprzęt do ochrony osobistej lub odblask jeśli go posiadasz.',
+              ),
+            ],
+          ),
+          AppPrimaryButton(
+            text: 'Kontynuuj',
+            onTap: () async {
+              await audioCubit.stop();
+              await Navigator.of(context).pushNamedAndRemoveUntil(
+                HomeView.id,
+                (route) => false,
+              );
+            },
+          )
+        ],
       ),
     );
   }

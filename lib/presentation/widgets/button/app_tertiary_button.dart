@@ -31,7 +31,7 @@ class AppTertiaryButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.blue100,
-          side: const BorderSide(width: 3, color: AppColors.blue800),
+          side: const BorderSide(width: 2, color: AppColors.blue800),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(dimensions.borderRadius1),

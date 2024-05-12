@@ -16,6 +16,7 @@ class MouthToMouth2View extends StatelessWidget {
       id: id,
       nextScreen: CheckingAfterMouthToMouthView.id,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset(AppImages.mouthToMouth2),
           const BulletedText('Zaciśnij palcami nos i weź głęboki wdech. '),

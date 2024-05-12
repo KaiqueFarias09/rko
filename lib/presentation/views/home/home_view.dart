@@ -57,7 +57,7 @@ class HomeView extends StatelessWidget {
                   Text(
                     textAlign: TextAlign.center,
                     'Oceń stan poszkodowanego i wykonaj instrukcje.',
-                    style: AppTypography.bodyLarge.copyWith(
+                    style: AppTypography.bodyMedium.copyWith(
                       color: AppColors.gray,
                     ),
                   ),
@@ -78,7 +78,7 @@ class HomeView extends StatelessWidget {
                   Text(
                     'Rytm pomocny do masażu serca. ',
                     textAlign: TextAlign.center,
-                    style: AppTypography.bodyLarge.copyWith(
+                    style: AppTypography.bodyMedium.copyWith(
                       color: AppColors.gray,
                     ),
                   ),

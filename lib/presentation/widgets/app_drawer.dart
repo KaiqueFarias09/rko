@@ -65,7 +65,7 @@ class AppDrawer extends StatelessWidget {
                       text: 'Numer alarmowy',
                       onTap: () async {
                         await BlocProvider.of<AudioCubit>(context).stop();
-                        await launchUrlString('tel: 122');
+                        await launchUrlString('tel: 112');
                       }),
                 ],
               ),

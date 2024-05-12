@@ -23,7 +23,7 @@ class PillShapedButtonSecondary extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.blue100,
         foregroundColor: AppColors.blue800,
-        side: const BorderSide(width: 3, color: AppColors.blue800),
+        side: const BorderSide(width: 2, color: AppColors.blue800),
         padding: AppPaddings.buttonContentPadding,
       ),
       onPressed: onTap ?? () => Navigator.of(context).pop(),
