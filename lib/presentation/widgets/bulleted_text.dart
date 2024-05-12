@@ -14,7 +14,7 @@ class BulletedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '\u2022 $text',
-      style: AppTypography.bodyLarge.copyWith(color: AppColors.gray),
+      style: AppTypography.bodyMedium.copyWith(color: AppColors.gray),
     );
   }
 }

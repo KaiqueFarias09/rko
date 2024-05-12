@@ -34,7 +34,7 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
             onPressed: actionOnTap,
             icon: const Icon(
               AppIcons.sound,
-              size: 20,
+              size: 18,
               color: AppColors.blue800,
             ),
           )
@@ -45,7 +45,7 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
               icon: const Icon(
                 AppIcons.menu,
                 color: AppColors.blue800,
-                size: 20,
+                size: 18,
               ),
             )
           : IconButton(
@@ -53,11 +53,11 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
               icon: const Icon(
                 AppIcons.chevronLeft,
                 color: AppColors.blue800,
-                size: 20,
+                size: 18,
               ),
             ),
       centerTitle: true,
-      title: Text(title, style: AppTypography.titleLarge),
+      title: Text(title, style: AppTypography.titleMedium),
     );
   }
 
