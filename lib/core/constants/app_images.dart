@@ -1,8 +1,8 @@
 const _assetPath = 'assets/images';
 
 class AppImages {
-  static const breathing1 = '$_assetPath/breathing-1.svg';
-  static const breathing2 = '$_assetPath/breathing-2.svg';
+  static const mouthToMouth1 = '$_assetPath/mouth-to-mouth-1.svg';
+  static const mouthToMouth2 = '$_assetPath/mouth-to-mouth-2.svg';
   static const firstAidKit = '$_assetPath/first-aid-kit.svg';
   static const firstThings1 = '$_assetPath/first-things-1.svg';
   static const firstThings2 = '$_assetPath/first-things-2.svg';
@@ -16,6 +16,6 @@ class AppImages {
   static const callTheEmergency = '$_assetPath/call-the-emergency.svg';
   static const checkIfPersonBreathes =
       '$_assetPath/check-if-person-breathes.svg';
-  static const checkingAfterBreathing =
-      '$_assetPath/checking-after-breathing.svg';
+  static const checkingAfterMouthToMouth =
+      '$_assetPath/checking-after-mouth-to-mouth.svg';
 }
