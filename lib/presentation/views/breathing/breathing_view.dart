@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/core/typography/app_typography.dart';
+import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
 import 'package:rko/presentation/views/heart-massage-begins/heart_massage_begins_view.dart';
 import 'package:rko/presentation/views/safe-position/safe_position_view.dart';
 import 'package:rko/presentation/widgets/audio_view_scaffold.dart';
@@ -18,10 +20,12 @@ class BreathingView extends StatefulWidget {
 class _BreathingViewState extends State<BreathingView>
     with TickerProviderStateMixin {
   late final AnimationController _controller;
+  late final AudioCubit audioCubit;
 
   @override
   void initState() {
     super.initState();
+    audioCubit = BlocProvider.of<AudioCubit>(context);
     _controller = AnimationController(vsync: this);
   }
 
@@ -53,15 +57,17 @@ class _BreathingViewState extends State<BreathingView>
             children: [
               AppTertiaryButton(
                 text: 'Tak',
-                onTap: () => Navigator.of(context).pushNamed(
+                onTap: () => audioCubit.navigateWithAudioTransition(
+                  context,
                   SafePositionView.id,
                 ),
                 icon: AppIcons.breathing,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               AppTertiaryButton(
                 text: 'Nie',
-                onTap: () => Navigator.of(context).pushNamed(
+                onTap: () => audioCubit.navigateWithAudioTransition(
+                  context,
                   HeartMassageBeginsView.id,
                 ),
                 icon: AppIcons.notBreathing,
