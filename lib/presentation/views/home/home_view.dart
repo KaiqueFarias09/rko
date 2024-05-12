@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rko/core/colors/app_colors.dart';
+import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/core/constants/app_padding.dart';
-import 'package:rko/core/constants/image_paths.dart';
 import 'package:rko/core/dimensions/app_dimensions.dart';
 import 'package:rko/core/typography/app_typography.dart';
+import 'package:rko/presentation/views/cpr/cpr_view.dart';
 import 'package:rko/presentation/views/first-things/first_things_view.dart';
 import 'package:rko/presentation/widgets/app_appbar.dart';
 import 'package:rko/presentation/widgets/app_drawer.dart';
@@ -82,7 +83,13 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 30),
-                  AppTertiaryButton(text: 'Rozpocznij', onTap: () {})
+                  AppTertiaryButton(
+                    text: 'Rozpocznij',
+                    onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                      CprView.id,
+                      (route) => false,
+                    ),
+                  )
                 ],
               ),
             ],
