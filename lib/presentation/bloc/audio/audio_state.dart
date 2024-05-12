@@ -6,5 +6,6 @@ enum AudioStatus { initial, playing, error, stopped }
 abstract class AudioState with _$AudioState {
   const factory AudioState({
     @Default(AudioStatus.initial) status,
+    @Default('') currentTrack,
   }) = _AudioState;
 }

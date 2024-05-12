@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AudioState {
   dynamic get status => throw _privateConstructorUsedError;
+  dynamic get currentTrack => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AudioStateCopyWith<AudioState> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $AudioStateCopyWith<$Res> {
           AudioState value, $Res Function(AudioState) then) =
       _$AudioStateCopyWithImpl<$Res, AudioState>;
   @useResult
-  $Res call({dynamic status});
+  $Res call({dynamic status, dynamic currentTrack});
 }
 
 /// @nodoc
@@ -46,11 +47,16 @@ class _$AudioStateCopyWithImpl<$Res, $Val extends AudioState>
   @override
   $Res call({
     Object? status = freezed,
+    Object? currentTrack = freezed,
   }) {
     return _then(_value.copyWith(
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      currentTrack: freezed == currentTrack
+          ? _value.currentTrack
+          : currentTrack // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ) as $Val);
   }
@@ -64,7 +70,7 @@ abstract class _$$AudioStateImplCopyWith<$Res>
       __$$AudioStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic status});
+  $Res call({dynamic status, dynamic currentTrack});
 }
 
 /// @nodoc
@@ -79,9 +85,12 @@ class __$$AudioStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = freezed,
+    Object? currentTrack = freezed,
   }) {
     return _then(_$AudioStateImpl(
       status: freezed == status ? _value.status! : status,
+      currentTrack:
+          freezed == currentTrack ? _value.currentTrack! : currentTrack,
     ));
   }
 }
@@ -89,15 +98,19 @@ class __$$AudioStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AudioStateImpl implements _AudioState {
-  const _$AudioStateImpl({this.status = AudioStatus.initial});
+  const _$AudioStateImpl(
+      {this.status = AudioStatus.initial, this.currentTrack = ''});
 
   @override
   @JsonKey()
   final dynamic status;
+  @override
+  @JsonKey()
+  final dynamic currentTrack;
 
   @override
   String toString() {
-    return 'AudioState(status: $status)';
+    return 'AudioState(status: $status, currentTrack: $currentTrack)';
   }
 
   @override
@@ -105,12 +118,16 @@ class _$AudioStateImpl implements _AudioState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AudioStateImpl &&
-            const DeepCollectionEquality().equals(other.status, status));
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.currentTrack, currentTrack));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(currentTrack));
 
   @JsonKey(ignore: true)
   @override
@@ -120,10 +137,13 @@ class _$AudioStateImpl implements _AudioState {
 }
 
 abstract class _AudioState implements AudioState {
-  const factory _AudioState({final dynamic status}) = _$AudioStateImpl;
+  const factory _AudioState(
+      {final dynamic status, final dynamic currentTrack}) = _$AudioStateImpl;
 
   @override
   dynamic get status;
+  @override
+  dynamic get currentTrack;
   @override
   @JsonKey(ignore: true)
   _$$AudioStateImplCopyWith<_$AudioStateImpl> get copyWith =>
