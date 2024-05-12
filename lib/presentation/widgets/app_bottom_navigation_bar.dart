@@ -7,9 +7,6 @@ class AppBottomNavigationBar extends StatelessWidget {
     required this.primaryOnTap,
     this.primaryTitle,
     this.primaryIcon,
-    this.secondaryTitle,
-    this.secondaryIcon,
-    this.secondaryOnTap,
     this.showSecondary = true,
     super.key,
   });
@@ -19,10 +16,6 @@ class AppBottomNavigationBar extends StatelessWidget {
   final String? primaryTitle;
   final IconData? primaryIcon;
   final VoidCallback primaryOnTap;
-
-  final String? secondaryTitle;
-  final IconData? secondaryIcon;
-  final VoidCallback? secondaryOnTap;
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +29,7 @@ class AppBottomNavigationBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           if (showSecondary)
-            PillShapedButtonSecondary(
-              title: secondaryTitle,
-              onTap: secondaryOnTap,
-              icon: secondaryIcon,
-            )
+            const PillShapedButtonSecondary()
           else
             const SizedBox(),
           PillShapedButtonPrimary(

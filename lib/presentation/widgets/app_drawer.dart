@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/colors/app_colors.dart';
-import 'package:rko/core/constants/image_paths.dart';
+import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/core/dimensions/app_dimensions.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/core/typography/app_typography.dart';

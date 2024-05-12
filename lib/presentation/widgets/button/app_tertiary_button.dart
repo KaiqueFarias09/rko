@@ -18,7 +18,12 @@ class AppTertiaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconWidget = icon != null ? Icon(icon) : const SizedBox();
+    final iconWidget = icon != null
+        ? Icon(
+            icon,
+            color: AppColors.blue800,
+          )
+        : const SizedBox();
     final dimensions = AppDimensions();
 
     return Padding(
@@ -39,7 +44,16 @@ class AppTertiaryButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment:
               icon != null ? MainAxisAlignment.start : MainAxisAlignment.center,
-          children: [iconWidget, Text(text, style: AppTypography.bodyLarge)],
+          children: [
+            iconWidget,
+            if (icon != null)
+              const SizedBox(
+                width: 16,
+              )
+            else
+              const SizedBox.shrink(),
+            Text(text, style: AppTypography.bodyLarge),
+          ],
         ),
       ),
     );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rko/core/constants/image_paths.dart';
+import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/core/icons/app_icons.dart';
-import 'package:rko/presentation/views/check-if-person-breaths/check_if_person_breaths_view.dart';
+import 'package:rko/presentation/views/check-if-person-breathes/check_if_person_breathes_view.dart';
 import 'package:rko/presentation/widgets/audio_view_scaffold.dart';
 import 'package:rko/presentation/widgets/bulleted_text.dart';
 import 'package:rko/presentation/widgets/button/app_secondary_button.dart';
@@ -24,10 +24,15 @@ class FirstThingsView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SvgPicture.asset(AppImages.shakeThePerson),
-          const BulletedText(
-            'Potrząśnij ramionami poszkodowanego i spróbuj nawiązać kontakt.',
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              BulletedText(
+                'Potrząśnij ramionami poszkodowanego i spróbuj nawiązać kontakt.',
+              ),
+              BulletedText('Zadzwoń po karetkę'),
+            ],
           ),
-          const BulletedText('Zadzwoń po karetkę'),
           AppSecondaryButton(
             text: 'Zadzwoń na 112',
             icon: AppIcons.call,
