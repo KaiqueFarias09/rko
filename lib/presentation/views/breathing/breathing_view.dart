@@ -37,6 +37,12 @@ class _BreathingViewState extends State<BreathingView>
 
   @override
   Widget build(BuildContext context) {
+    Future<void> onTap(String? nextScreen) async {
+      await audioCubit.stop();
+      await Navigator.of(context).pushNamed(nextScreen!);
+      await audioCubit.play(BreathingView.id);
+    }
+
     return AudioViewScaffold(
       id: BreathingView.id,
       title: '',
@@ -57,19 +63,13 @@ class _BreathingViewState extends State<BreathingView>
             children: [
               AppTertiaryButton(
                 text: 'Tak',
-                onTap: () => audioCubit.navigateWithAudioTransition(
-                  context,
-                  SafePositionView.id,
-                ),
+                onTap: () => onTap(SafePositionView.id),
                 icon: AppIcons.breathing,
               ),
               const SizedBox(height: 12),
               AppTertiaryButton(
                 text: 'Nie',
-                onTap: () => audioCubit.navigateWithAudioTransition(
-                  context,
-                  HeartMassageBeginsView.id,
-                ),
+                onTap: () => onTap(HeartMassageBeginsView.id),
                 icon: AppIcons.notBreathing,
               ),
             ],
