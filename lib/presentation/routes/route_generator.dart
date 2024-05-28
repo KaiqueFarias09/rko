@@ -14,6 +14,7 @@ import 'package:rko/presentation/views/mouth-to-mouth-2/mouth_to_mouth_2_view.da
 import 'package:rko/presentation/views/onboarding/onboarding_view.dart';
 import 'package:rko/presentation/views/person-is-breathing-final/person_is_breathing_final_view.dart';
 import 'package:rko/presentation/views/person-is-not-breathing-final/person_is_not_breathing_final_view.dart';
+import 'package:rko/presentation/views/safe-position-person-is-not-breathing/safe_position_person_is_not_breathing.dart';
 import 'package:rko/presentation/views/safe-position/safe_position_view.dart';
 import 'package:rko/presentation/views/secure-the-area/secure_the_area_view.dart';
 
@@ -40,6 +41,9 @@ class RouteGenerator {
 
       case SafePositionView.id:
         return _buildRoute(const SafePositionView());
+
+      case SafePositionPersonIsNotBreathing.id:
+        return _buildRoute(const SafePositionPersonIsNotBreathing());
 
       case MouthToMouth1View.id:
         return _buildRoute(const MouthToMouth1View());
