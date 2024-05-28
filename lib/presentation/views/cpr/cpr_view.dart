@@ -56,7 +56,7 @@ class _CprViewState extends State<CprView> with TickerProviderStateMixin {
               icon: AppIcons.play,
               onPressed: () {
                 setState(() => isPlaying = !isPlaying);
-                audioCubit.play('${CprView.id}-animation');
+                audioCubit.play('${CprView.id}-animation', shouldLoop: true);
                 _controller.repeat(period: _controller.duration);
               },
             )
