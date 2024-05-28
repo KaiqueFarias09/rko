@@ -1,11 +1,11 @@
 part of 'audio_cubit.dart';
 
-enum AudioStatus { initial, playing, error, stopped }
+enum AudioStatus { initial, playing, error, stopped, muted }
 
 @freezed
 abstract class AudioState with _$AudioState {
   const factory AudioState({
     @Default(AudioStatus.initial) status,
-    @Default('') currentTrack,
+    @Default('') String currentTrack,
   }) = _AudioState;
 }

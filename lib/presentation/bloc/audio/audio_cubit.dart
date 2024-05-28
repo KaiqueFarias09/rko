@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:just_audio/just_audio.dart';
@@ -16,7 +15,6 @@ class AudioCubit extends Cubit<AudioState> {
         super(const AudioState());
 
   final AudioPlayer _audioPlayer;
-  late String _previousFile;
   StreamSubscription<PlayerState>? _audioSubscription;
 
   void _initListeners() {
@@ -26,27 +24,19 @@ class AudioCubit extends Cubit<AudioState> {
     });
   }
 
-  Future<void> navigateWithAudioTransition(
-    BuildContext context,
-    String routeName,
-  ) async {
-    await stop();
-    await Navigator.of(context).pushNamed(routeName);
-    await play(_previousFile);
-  }
-
-  Future<void> play(String file) async {
-    _previousFile = file;
+  Future<void> play(String file, {bool shouldLoop = false}) async {
     await _audioPlayer.setAsset('$_assetsPath/$file.mp3');
     _initListeners();
     emit(AudioState(status: AudioStatus.playing, currentTrack: file));
+    
+    if (shouldLoop == true) await _audioPlayer.setLoopMode(LoopMode.all);
     await _audioPlayer.play();
   }
 
   Future<void> stop() async {
     await _audioPlayer.stop();
     if (_audioSubscription != null) await _audioSubscription!.cancel();
-    emit(const AudioState(status: AudioStatus.stopped));
+    emit(const AudioState(status: AudioStatus.muted));
   }
 
   @override
