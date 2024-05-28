@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/app_padding.dart';
+import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
 import 'package:rko/presentation/widgets/app_appbar.dart';
 import 'package:rko/presentation/widgets/app_bottom_navigation_bar.dart';
@@ -17,7 +18,7 @@ class AudioViewScaffold extends StatefulWidget {
     super.key,
   }) : assert(
           bottomNavigationBar != null || nextScreen != null,
-          'nextScreen cannot be empty when bottomNavigationBar is null.',
+          'nextScreen cannot be null when bottomNavigationBar is null.',
         );
 
   final String id;
@@ -57,35 +58,54 @@ class _AudioViewScaffoldState extends State<AudioViewScaffold>
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      onPopInvoked: (didPop) async {
-        if (!didPop) return;
-        await audioCubit.stop();
-      },
-      child: Scaffold(
-        backgroundColor: AppColors.white,
-        appBar: AppAppbar(
-          title: widget.title ?? '',
-          shouldShowAction: true,
-          actionOnTap: () async {
+    return BlocBuilder<AudioCubit, AudioState>(
+      builder: (context, state) {
+        final isMuted = state.status == AudioStatus.muted;
+
+        return PopScope(
+          onPopInvoked: (didPop) async {
+            if (!didPop) return;
             await audioCubit.stop();
           },
-        ),
-        bottomNavigationBar: widget.bottomNavigationBar ??
-            AppBottomNavigationBar(
-              primaryOnTap: () async {
-                await audioCubit.navigateWithAudioTransition(
-                  context,
-                  widget.nextScreen!,
-                );
-              },
-              showSecondary: widget.showSecondary,
+          child: Scaffold(
+            backgroundColor: AppColors.white,
+            appBar: AppAppbar(
+              title: widget.title ?? '',
+              shouldShowAction: true,
+              actionIconButton: isMuted == true
+                  ? IconButton(
+                      onPressed: () => audioCubit.play(widget.id),
+                      icon: const Icon(
+                        AppIcons.muted,
+                        size: 20,
+                      ),
+                      color: AppColors.blue800,
+                    )
+                  : IconButton(
+                      onPressed: () => audioCubit.stop(),
+                      icon: const Icon(
+                        AppIcons.sound,
+                        size: 20,
+                      ),
+                      color: AppColors.blue800,
+                    ),
             ),
-        body: Padding(
-          padding: AppPaddings.defaultPadding,
-          child: widget.body,
-        ),
-      ),
+            bottomNavigationBar: widget.bottomNavigationBar ??
+                AppBottomNavigationBar(
+                  primaryOnTap: () async {
+                    await audioCubit.stop();
+                    await Navigator.of(context).pushNamed(widget.nextScreen!);
+                    await audioCubit.play(widget.id);
+                  },
+                  showSecondary: widget.showSecondary,
+                ),
+            body: Padding(
+              padding: AppPaddings.defaultPadding,
+              child: widget.body,
+            ),
+          ),
+        );
+      },
     );
   }
 }

@@ -9,7 +9,7 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
     this.shouldShowDrawer = false,
     this.shouldShowAction = false,
     this.leadingOnTap,
-    this.actionOnTap,
+    this.actionIconButton,
     super.key,
   });
 
@@ -18,7 +18,7 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
   final bool shouldShowDrawer;
   final bool shouldShowAction;
 
-  final VoidCallback? actionOnTap;
+  final IconButton? actionIconButton;
   final VoidCallback? leadingOnTap;
 
   @override
@@ -29,15 +29,7 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.white,
       surfaceTintColor: AppColors.white,
       actions: [
-        if (shouldShowAction)
-          IconButton(
-            onPressed: actionOnTap,
-            icon: const Icon(
-              AppIcons.sound,
-              size: 20,
-              color: AppColors.blue800,
-            ),
-          )
+        if (shouldShowAction) actionIconButton ?? const SizedBox.shrink()
       ],
       leading: shouldShowDrawer
           ? IconButton(
