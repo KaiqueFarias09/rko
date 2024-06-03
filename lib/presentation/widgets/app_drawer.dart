@@ -54,10 +54,7 @@ class AppDrawer extends StatelessWidget {
                       text: 'Tempo uciskania',
                       onTap: () async {
                         await BlocProvider.of<AudioCubit>(context).stop();
-                        await Navigator.of(context).pushNamedAndRemoveUntil(
-                          CprView.id,
-                          (route) => false,
-                        );
+                        await Navigator.of(context).pushNamed(CprView.id);
                       }),
                   const SizedBox(height: 20),
                   CustomListTile(

@@ -5,7 +5,6 @@ import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
 import 'package:rko/presentation/widgets/app_appbar.dart';
-import 'package:rko/presentation/widgets/app_drawer.dart';
 import 'package:rko/presentation/widgets/app_icon_button.dart';
 
 class CprView extends StatefulWidget {
@@ -38,11 +37,7 @@ class _CprViewState extends State<CprView> with TickerProviderStateMixin {
 
     return Scaffold(
       backgroundColor: AppColors.white,
-      drawer: const AppDrawer(),
-      appBar: const AppAppbar(
-        title: 'Tempo uciskania',
-        shouldShowDrawer: true,
-      ),
+      appBar: const AppAppbar(title: 'Tempo uciskania'),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

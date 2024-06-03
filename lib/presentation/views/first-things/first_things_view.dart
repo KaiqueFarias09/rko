@@ -19,6 +19,7 @@ class FirstThingsView extends StatelessWidget {
       id: id,
       nextScreen: CheckIfPersonBreathsView.id,
       showSecondary: false,
+      showDrawer: true,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

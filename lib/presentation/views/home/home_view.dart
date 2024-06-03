@@ -85,10 +85,7 @@ class HomeView extends StatelessWidget {
                   const SizedBox(height: 30),
                   AppTertiaryButton(
                     text: 'Rozpocznij',
-                    onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                      CprView.id,
-                      (route) => false,
-                    ),
+                    onTap: () => Navigator.of(context).pushNamed(CprView.id),
                   )
                 ],
               ),

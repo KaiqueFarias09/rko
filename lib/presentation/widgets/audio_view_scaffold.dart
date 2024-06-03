@@ -6,6 +6,7 @@ import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
 import 'package:rko/presentation/widgets/app_appbar.dart';
 import 'package:rko/presentation/widgets/app_bottom_navigation_bar.dart';
+import 'package:rko/presentation/widgets/app_drawer.dart';
 
 class AudioViewScaffold extends StatefulWidget {
   const AudioViewScaffold({
@@ -14,6 +15,7 @@ class AudioViewScaffold extends StatefulWidget {
     this.title,
     this.bottomNavigationBar,
     this.showSecondary = true,
+    this.showDrawer = false,
     this.nextScreen,
     super.key,
   }) : assert(
@@ -24,6 +26,7 @@ class AudioViewScaffold extends StatefulWidget {
   final String id;
   final Widget body;
   final bool showSecondary;
+  final bool showDrawer;
   final String? nextScreen;
   final String? title;
   final Widget? bottomNavigationBar;
@@ -68,10 +71,12 @@ class _AudioViewScaffoldState extends State<AudioViewScaffold>
             await audioCubit.stop();
           },
           child: Scaffold(
+            drawer: widget.showDrawer ? const AppDrawer() : null,
             backgroundColor: AppColors.white,
             appBar: AppAppbar(
               title: widget.title ?? '',
               shouldShowAction: true,
+              shouldShowDrawer: widget.showDrawer,
               actionIconButton: isMuted == true
                   ? IconButton(
                       onPressed: () => audioCubit.play(widget.id),
