@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
@@ -25,13 +26,11 @@ class CheckIfPersonBreathsView extends StatelessWidget {
         children: [
           const SizedBox(),
           SvgPicture.asset(AppImages.checkIfPersonBreathes),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BulletedText('Sprawdź czy poszkodowany oddycha.'),
-              BulletedText(
-                'Obserwuj ruch klatki piersiowej, i sprawdź czy słyszysz oddech oraz czy czujesz go na swoim policzku.',
-              ),
+              BulletedText(S.of(context).checkIfPersonBreathesInstruction1),
+              BulletedText(S.of(context).checkIfPersonBreathesInstruction2),
             ],
           ),
           const SizedBox()

@@ -15,7 +15,7 @@ class AudioViewScaffold extends StatefulWidget {
     this.title,
     this.bottomNavigationBar,
     this.showSecondary = true,
-    this.showDrawer = false,
+    this.showDrawer = true,
     this.nextScreen,
     super.key,
   }) : assert(

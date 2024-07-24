@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/core/icons/app_icons.dart';
@@ -19,23 +20,20 @@ class FirstThingsView extends StatelessWidget {
       id: id,
       nextScreen: CheckIfPersonBreathsView.id,
       showSecondary: false,
-      showDrawer: true,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SvgPicture.asset(AppImages.shakeThePerson),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BulletedText(
-                'Potrząśnij ramionami poszkodowanego i spróbuj nawiązać kontakt.',
-              ),
-              BulletedText('Zadzwoń po karetkę'),
+              BulletedText(S.of(context).firstThingsInstruction1),
+              BulletedText(S.of(context).firstThingsInstruction2),
             ],
           ),
           AppSecondaryButton(
-            text: 'Zadzwoń na 112',
+            text: S.of(context).firstThingsButton,
             icon: AppIcons.call,
             onTap: () => launchUrlString('tel:112'),
           ),

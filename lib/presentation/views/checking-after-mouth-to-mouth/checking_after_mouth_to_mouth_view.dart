@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/presentation/views/safe-position-person-is-not-breathing/safe_position_person_is_not_breathing.dart';
@@ -19,10 +20,8 @@ class CheckingAfterMouthToMouthView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset(AppImages.checkingAfterMouthToMouth),
-          const BulletedText(
-            'Zabierz głowę od poszkodowanego i spójrz czy klatka piersiowa opada.',
-          ),
-          const BulletedText('Następnie powtórz i daj drugi oddech.')
+          BulletedText(S.of(context).checkingAfterMouthToMouthInstruction1),
+          BulletedText(S.of(context).checkingAfterMouthToMouthInstruction2)
         ],
       ),
     );

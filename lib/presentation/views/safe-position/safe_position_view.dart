@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/presentation/views/person-is-breathing-final/person_is_breathing_final_view.dart';
@@ -16,16 +17,12 @@ class SafePositionView extends StatelessWidget {
       id: id,
       nextScreen: PersonIsBreathingFinalView.id,
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset(AppImages.safePosition),
-          const BulletedText(
-              'Ułóż poszkodowanego w pozycji bocznej bezpiecznej.'),
-          const BulletedText(
-            'Połóż na boku i odchyl głowę poszkodowanego do tyłu w celu lepszego przepływu powietrza.',
-          ),
-          const BulletedText(
-            'Monitoruj poszkodowanego, żeby zauważyć ewentualne zmiany w oddechu czy zmianie przytomności.',
-          ),
+          BulletedText(S.of(context).safePositionInstructions1),
+          BulletedText(S.of(context).safePositionInstructions2),
+          BulletedText(S.of(context).safePositionInstructions3),
         ],
       ),
     );
