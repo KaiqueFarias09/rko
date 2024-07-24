@@ -1,0 +1,171 @@
+{
+  "@@locale": "en",
+  "breathingViewTitle": "Does the victim breathe?",
+  "@breathingViewTitle": {
+    "description": "Title text asking if the victim is breathing on the breathing view screen"
+  },
+  "breathingViewYes": "Yes",
+  "@breathingViewYes": {
+    "description": "Text for the 'Yes' button on the breathing view screen"
+  },
+  "breathingViewNo": "No",
+  "@breathingViewNo": {
+    "description": "Text for the 'No' button on the breathing view screen"
+  },
+  "checkIfPersonBreathesInstruction1": "Check if the victim breathes.",
+  "@checkIfPersonBreathesInstruction1": {
+    "description": "Instruction text to check if the victim breathes"
+  },
+  "checkIfPersonBreathesInstruction2": "Observe chest movement, listen for breath sounds, and feel for breath on your cheek.",
+  "@checkIfPersonBreathesInstruction2": {
+    "description": "Instruction text to observe the chest movement and check for breath"
+  },
+  "checkingAfterMouthToMouthInstruction1": "Remove your head from the victim and check if the chest falls.",
+  "@checkingAfterMouthToMouthInstruction1": {
+    "description": "Instruction to remove head from victim and check chest"
+  },
+  "checkingAfterMouthToMouthInstruction2": "Then repeat and give a second breath.",
+  "@checkingAfterMouthToMouthInstruction2": {
+    "description": "Instruction to repeat and give a second breath"
+  },
+  "firstThingsInstruction1": "Shake the victim's shoulders and try to make contact.",
+  "@firstThingsInstruction1": {
+    "description": "Instruction to shake the victim's shoulders and make contact"
+  },
+  "firstThingsInstruction2": "Call an ambulance",
+  "@firstThingsInstruction2": {
+    "description": "Instruction to call an ambulance"
+  },
+  "firstThingsButton": "Call 112",
+  "@firstThingsButton": {
+    "description": "Button text to call emergency number 112"
+  },
+  "cprViewTitle": "Compression rate",
+  "@cprViewTitle": {
+    "description": "Title for the CPR view indicating the compression rate"
+  },
+  "heartMassageBeginsInstruction1": "Start chest compressions.",
+  "@heartMassageBeginsInstruction1": {
+    "description": "Instruction to start chest compressions"
+  },
+  "heartMassageBeginsInstruction2": "Place your hand on the chest and interlock fingers with the other. With straight arms, press down on the chest to a depth of 5 cm. Without lifting your hands, release the pressure. Compress 100-120 times per minute.",
+  "@heartMassageBeginsInstruction2": {
+    "description": "Detailed instruction for chest compressions"
+  },
+  "heartMassageBeginsButton": "Heart massage rhythm",
+  "@heartMassageBeginsButton": {
+    "description": "Button text for heart massage rhythm"
+  },
+  "mouthToMouth1Instruction1": "Start artificial respiration.",
+  "@mouthToMouth1Instruction1": {
+    "description": "Instruction to start artificial respiration"
+  },
+  "mouthToMouth1Instruction2": "Turn the head by placing a hand on the forehead and lifting the chin upwards.",
+  "@mouthToMouth1Instruction2": {
+    "description": "Instruction to position the head for artificial respiration"
+  },
+  "mouthToMouth2Instruction1": "Pinch the nose shut and take a deep breath.",
+  "@mouthToMouth2Instruction1": {
+    "description": "Instruction to pinch the nose and take a deep breath"
+  },
+  "mouthToMouth2Instruction2": "Seal your lips over the victim's mouth.",
+  "@mouthToMouth2Instruction2": {
+    "description": "Instruction to seal lips over victim's mouth"
+  },
+  "mouthToMouth2Instruction3": "Breathe out for about one second and watch the chest rise.",
+  "@mouthToMouth2Instruction3": {
+    "description": "Instruction to breathe out and check chest rise"
+  },
+  "mouthToMouth2Instruction4": "If the chest does not rise, reposition the victim's head.",
+  "@mouthToMouth2Instruction4": {
+    "description": "Instruction to reposition the victim's head if the chest does not rise"
+  },
+  "personIsBreathingFinalText": "Wait for the ambulance or until the victim regains consciousness.",
+  "@personIsBreathingFinalText": {
+    "description": "Final instruction to wait for the ambulance or victim's consciousness"
+  },
+  "homeViewTitle": "Provide help",
+  "@homeViewTitle": {
+    "description": "Title text of the Home view screen"
+  },
+  "emergencyPhoneNumber": "112",
+  "@emergencyPhoneNumber": {
+    "description": "Emergency phone number displayed in the Home view"
+  },
+  "emergencyPhoneLabel": "Emergency Phone Number",
+  "@emergencyPhoneLabel": {
+    "description": "Label for the emergency phone number in the Home view"
+  },
+  "callForHelpButton": "Call for help",
+  "@callForHelpButton": {
+    "description": "Button text to call for help in the Home view"
+  },
+  "evaluateConditionText": "Assess the condition of the victim and follow the instructions.",
+  "@evaluateConditionText": {
+    "description": "Text instructing to evaluate the victim's condition in the Home view"
+  },
+  "startButton": "Start",
+  "@startButton": {
+    "description": "Button text to start an action in the Home view"
+  },
+  "rhythmForChestCompression": "Rhythm helpful for chest compressions.",
+  "@rhythmForChestCompression": {
+    "description": "Text about rhythm for chest compressions in the Home view"
+  },
+  "continueCPRText": "Continue chest compressions and artificial respiration until the ambulance arrives or the victim regains consciousness.",
+  "@continueCPRText": {
+    "description": "Text instructing to continue CPR in the PersonIsNotBreathingFinalView"
+  },
+  "safePositionInstructions1": "Place the victim in the lateral safe position.",
+  "@safePositionInstructions1": {
+    "description": "Instruction to place the victim in a safe position in the SafePositionView"
+  },
+  "safePositionInstructions2": "Lay the victim on their side and tilt their head back for better airflow.",
+  "@safePositionInstructions2": {
+    "description": "Instruction to tilt the victim's head in the SafePositionView"
+  },
+  "safePositionInstructions3": "Monitor the victim for any changes in breathing or consciousness.",
+  "@safePositionInstructions3": {
+    "description": "Instruction to monitor the victim in the SafePositionView"
+  },
+  "safePositionInstructions4": "If the victim regains breathing, place them in the lateral safe position.",
+  "@safePositionInstructions4": {
+    "description": "Instruction to place the victim in a safe position if they regain breathing in the SafePositionPersonIsNotBreathing view"
+  },
+  "secureTheAreaTitle": "Safety",
+  "@secureTheAreaTitle": {
+    "description": "Title text of the SecureTheAreaView"
+  },
+  "ensureNoThreats": "Ensure there are no threats around you.",
+  "@ensureNoThreats": {
+    "description": "Instruction to check for threats in the SecureTheAreaView"
+  },
+  "wearProtection": "Wear personal protective equipment or a reflector if you have one.",
+  "@wearProtection": {
+    "description": "Instruction to wear protection in the SecureTheAreaView"
+  },
+  "continueButton": "Continue",
+  "@continueButton": {
+    "description": "Button text to continue in the SecureTheAreaView"
+  },
+  "drawerMenuTitle": "Main menu",
+  "@drawerMenuTitle": {
+    "description": "Title for the main menu item in the AppDrawer"
+  },
+  "drawerCompressionRhythmTitle": "Compression rhythm",
+  "@drawerCompressionRhythmTitle": {
+    "description": "Title for the compression rhythm item in the AppDrawer"
+  },
+  "drawerEmergencyNumberTitle": "Emergency number",
+  "@drawerEmergencyNumberTitle": {
+    "description": "Title for the emergency number item in the AppDrawer"
+  },
+  "pillShapedButtonSecondaryTitle": "Previous",
+  "@pillShapedButtonSecondaryTitle": {
+    "description": "Title for the secondary pill-shaped button"
+  },
+  "pillShapedButtonPrimaryTitle": "Next",
+  "@pillShapedButtonPrimaryTitle": {
+    "description": "Title for the primary pill-shaped button"
+  }
+}

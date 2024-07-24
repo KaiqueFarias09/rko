@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/presentation/views/checking-after-mouth-to-mouth/checking_after_mouth_to_mouth_view.dart';
@@ -19,12 +20,10 @@ class MouthToMouth2View extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset(AppImages.mouthToMouth2),
-          const BulletedText('Zaciśnij palcami nos i weź głęboki wdech. '),
-          const BulletedText('Szczelnie zasłoń ustami usta poszkodowanego.'),
-          const BulletedText(
-            'Wdychaj powietrze przez około sekundę i patrz czy klatka piersiowa się podnosi.',
-          ),
-          const BulletedText('Jeśli nie, popraw pozycję głowy poszkodowanego.'),
+          BulletedText(S.of(context).mouthToMouth2Instruction1),
+          BulletedText(S.of(context).mouthToMouth2Instruction2),
+          BulletedText(S.of(context).mouthToMouth2Instruction3),
+          BulletedText(S.of(context).mouthToMouth2Instruction4),
         ],
       ),
     );

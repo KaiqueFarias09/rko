@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/app_padding.dart';
 import 'package:rko/core/dimensions/app_dimensions.dart';
@@ -34,7 +35,10 @@ class PillShapedButtonSecondary extends StatelessWidget {
             size: AppDimensions().spacing5,
           ),
           const SizedBox(width: 12),
-          Text(title ?? 'Poprzedni', style: AppTypography.bodyBase),
+          Text(
+            title ?? S.of(context).pillShapedButtonSecondaryTitle,
+            style: AppTypography.bodyBase,
+          ),
         ],
       ),
     );

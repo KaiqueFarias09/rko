@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:rko/presentation/widgets/final_screen_scaffold.dart';
 
 class PersonIsBreathingFinalView extends StatelessWidget {
@@ -8,9 +9,8 @@ class PersonIsBreathingFinalView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FinalScreenScaffold(
-      text:
-          'Zaczekaj do przyjazdu karetki lub do odzyskania przytomności przez poszkodowanego.',
+    return FinalScreenScaffold(
+      text: S.of(context).personIsBreathingFinalText,
       id: id,
     );
   }

@@ -1,0 +1,7 @@
+arb-dir: lib/core/l10n/arb
+template-arb-file: intl_en.arb
+output-localization-file: l10n.dart
+nullable-getter: false
+output-dir: lib/core/l10n/generated
+output-class: S
+#untranslated-messages-file: l10n_errors.txt

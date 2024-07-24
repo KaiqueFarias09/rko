@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/app_images.dart';
@@ -26,7 +27,10 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       drawer: const AppDrawer(),
       backgroundColor: AppColors.white,
-      appBar: const AppAppbar(title: 'Zapewnij pomoc', shouldShowDrawer: true),
+      appBar: AppAppbar(
+        title: S.of(context).homeViewTitle,
+        shouldShowDrawer: true,
+      ),
       body: Padding(
         padding: AppPaddings.defaultPadding,
         child: SingleChildScrollView(
@@ -34,14 +38,17 @@ class HomeView extends StatelessWidget {
             children: [
               _BaseContainer(
                 children: [
-                  const Text('112', style: AppTypography.titleXXLarge),
-                  const Text(
-                    'Telefon alarmowy',
+                  Text(
+                    S.of(context).emergencyPhoneNumber,
+                    style: AppTypography.titleXXLarge,
+                  ),
+                  Text(
+                    S.of(context).emergencyPhoneLabel,
                     style: AppTypography.bodyLarge,
                   ),
                   const SizedBox(height: 30),
                   AppAlertButton(
-                    text: 'Zadzwoń po pomoc',
+                    text: S.of(context).callForHelpButton,
                     onTap: () => launchUrlString('tel:112'),
                   )
                 ],
@@ -56,14 +63,14 @@ class HomeView extends StatelessWidget {
                   const SizedBox(height: 30),
                   Text(
                     textAlign: TextAlign.center,
-                    'Oceń stan poszkodowanego i wykonaj instrukcje.',
+                    S.of(context).evaluateConditionText,
                     style: AppTypography.bodyMedium.copyWith(
                       color: AppColors.gray,
                     ),
                   ),
                   const SizedBox(height: 30),
                   AppPrimaryButton(
-                    text: 'Rozpocznij',
+                    text: S.of(context).startButton,
                     onTap: () => Navigator.of(context).pushNamed(
                       FirstThingsView.id,
                     ),
@@ -76,7 +83,7 @@ class HomeView extends StatelessWidget {
                   SvgPicture.asset(AppImages.huggingHeart, height: 150),
                   const SizedBox(height: 30),
                   Text(
-                    'Rytm pomocny do masażu serca. ',
+                    S.of(context).rhythmForChestCompression,
                     textAlign: TextAlign.center,
                     style: AppTypography.bodyMedium.copyWith(
                       color: AppColors.gray,
@@ -84,7 +91,7 @@ class HomeView extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   AppTertiaryButton(
-                    text: 'Rozpocznij',
+                    text: S.of(context).startButton,
                     onTap: () => Navigator.of(context).pushNamed(CprView.id),
                   )
                 ],

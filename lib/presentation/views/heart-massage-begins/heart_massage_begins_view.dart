@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/core/icons/app_icons.dart';
@@ -40,17 +41,15 @@ class HeartMassageBeginsView extends StatelessWidget {
                 AppImages.heartMassageBegins,
                 height: 300,
               ),
-              const Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BulletedText('Rozpocznij ucisk klatki piersiowej.'),
-                  BulletedText(
-                    'Ułóż swoją dłoń na klatce piersiowej i spleć palce z drugą. Na wyprostowanych ramionach uciskaj klatkę do głębokości 5 cm. Nie odrywając dłoni zwolnij ucisk. Uciskaj 100 - 120 razy na minutę.',
-                  ),
+                  BulletedText(S.of(context).heartMassageBeginsInstruction1),
+                  BulletedText(S.of(context).heartMassageBeginsInstruction2),
                 ],
               ),
               AppSecondaryButton(
-                text: 'Rytm do uciskania serca',
+                text: S.of(context).heartMassageBeginsButton,
                 icon: AppIcons.heart,
                 onTap: () async {
                   if (status == AudioStatus.stopped || currentTrack == id) {

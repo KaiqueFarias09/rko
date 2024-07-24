@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rko/core/icons/app_icons.dart';
 import 'package:rko/core/typography/app_typography.dart';
@@ -50,8 +51,8 @@ class _BreathingViewState extends State<BreathingView>
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            'Czy poszkodowany oddycha?',
+          Text(
+            S.of(context).breathingViewTitle,
             style: AppTypography.titleLarge,
           ),
           Lottie.asset('assets/animations/breathing.json',
@@ -62,13 +63,13 @@ class _BreathingViewState extends State<BreathingView>
           Column(
             children: [
               AppTertiaryButton(
-                text: 'Tak',
+                text: S.of(context).breathingViewYes,
                 onTap: () => onTap(SafePositionView.id),
                 icon: AppIcons.breathing,
               ),
               const SizedBox(height: 12),
               AppTertiaryButton(
-                text: 'Nie',
+                text: S.of(context).breathingViewNo,
                 onTap: () => onTap(HeartMassageBeginsView.id),
                 icon: AppIcons.notBreathing,
               ),

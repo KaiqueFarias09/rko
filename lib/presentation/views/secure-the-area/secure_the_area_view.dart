@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rko/core/constants/app_images.dart';
 import 'package:rko/presentation/bloc/audio/audio_cubit.dart';
@@ -19,26 +20,23 @@ class SecureTheAreaView extends StatelessWidget {
     WidgetsBinding.instance.addPostFrameCallback((_) => audioCubit.play(id));
 
     return AudioViewScaffold(
-      title: 'Bezpieczeństwo',
+      title: S.of(context).secureTheAreaTitle,
       id: id,
       bottomNavigationBar: const SizedBox.shrink(),
+      showDrawer: false,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SvgPicture.asset(AppImages.secureTheArea),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BulletedText(
-                'Upewnij się, że nie ma wokół Ciebie zagrożenia',
-              ),
-              BulletedText(
-                'Załóż sprzęt do ochrony osobistej lub odblask jeśli go posiadasz.',
-              ),
+              BulletedText(S.of(context).ensureNoThreats),
+              BulletedText(S.of(context).wearProtection),
             ],
           ),
           AppPrimaryButton(
-            text: 'Kontynuuj',
+            text: S.of(context).continueButton,
             onTap: () async {
               await audioCubit.stop();
               await Navigator.of(context).pushNamedAndRemoveUntil(

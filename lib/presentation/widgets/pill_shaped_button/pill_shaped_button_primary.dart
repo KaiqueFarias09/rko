@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/app_padding.dart';
 import 'package:rko/core/dimensions/app_dimensions.dart';
@@ -29,7 +30,7 @@ class PillShapedButtonPrimary extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            title ?? 'Dalej',
+            title ?? S.of(context).pillShapedButtonPrimaryTitle,
             style: AppTypography.bodyBase.copyWith(
               color: AppColors.blue100,
             ),

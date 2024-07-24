@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/constants/app_images.dart';
@@ -40,7 +41,7 @@ class AppDrawer extends StatelessWidget {
                 children: [
                   CustomListTile(
                       icon: AppIcons.goBack,
-                      text: 'Menu główne',
+                      text: S.of(context).drawerMenuTitle,
                       onTap: () async {
                         await BlocProvider.of<AudioCubit>(context).stop();
                         await Navigator.of(context).pushNamedAndRemoveUntil(
@@ -51,7 +52,7 @@ class AppDrawer extends StatelessWidget {
                   const SizedBox(height: 20),
                   CustomListTile(
                       icon: AppIcons.heart,
-                      text: 'Tempo uciskania',
+                      text: S.of(context).drawerCompressionRhythmTitle,
                       onTap: () async {
                         await BlocProvider.of<AudioCubit>(context).stop();
                         await Navigator.of(context).pushNamed(CprView.id);
@@ -59,7 +60,7 @@ class AppDrawer extends StatelessWidget {
                   const SizedBox(height: 20),
                   CustomListTile(
                       icon: AppIcons.call,
-                      text: 'Numer alarmowy',
+                      text: S.of(context).drawerEmergencyNumberTitle,
                       onTap: () async {
                         await BlocProvider.of<AudioCubit>(context).stop();
                         await launchUrlString('tel: 112');

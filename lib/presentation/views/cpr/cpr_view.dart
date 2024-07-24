@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rko/core/colors/app_colors.dart';
 import 'package:rko/core/icons/app_icons.dart';
@@ -37,7 +38,7 @@ class _CprViewState extends State<CprView> with TickerProviderStateMixin {
 
     return Scaffold(
       backgroundColor: AppColors.white,
-      appBar: const AppAppbar(title: 'Tempo uciskania'),
+      appBar: AppAppbar(title: S.of(context).cprViewTitle),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
